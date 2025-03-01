@@ -20,7 +20,7 @@ return {
       },
     },
     keymap = {
-      preset = "enter",
+      preset = "none",
       ["<Tab>"] = { "select_and_accept" },
     },
   },
