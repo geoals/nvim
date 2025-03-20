@@ -3,4 +3,4 @@
 -- Add any additional options here
 
 vim.opt.wrap = true
-vim.opt.spelllang = { "en", "cjk" }
+vim.opt.spelllang = { "en", "cjk", "nb" }

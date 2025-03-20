@@ -23,3 +23,27 @@ end, { desc = "Custom Projects" })
 vim.keymap.set("n", "<leader>fP", function()
   require("custom.projects").add_project()
 end, { desc = "Add Project" })
+
+-- Swap cwd and root dir
+vim.keymap.set("n", "<leader>ff", LazyVim.pick("files", { root = false }), { desc = "Find Files (cwd)" })
+vim.keymap.set("n", "<leader>fF", LazyVim.pick("files"), { desc = "Find Files (Root Dir)" })
+vim.keymap.set("n", "<leader>sg", LazyVim.pick("live_grep", { root = false }), { desc = "Grep (cwd)" })
+vim.keymap.set("n", "<leader>sG", LazyVim.pick("live_grep"), { desc = "Grep (Root Dir)" })
+
+vim.keymap.set("n", "<leader>fT", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root() })
+end, { desc = "Terminal (Root Dir)" })
+
+vim.keymap.set("n", "<leader>ft", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
+
+vim.keymap.set("n", "<c-/>", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
+
+-- TODO: add keymap for yanking currect working directory or the directory of current buffer
+
+-- TODO: continuation comment stop it pls
+--
+-- TODO: change leader s g to continue sarch (also file)
